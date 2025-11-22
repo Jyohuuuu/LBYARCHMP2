@@ -51,10 +51,10 @@ int main() {
 
         double asmTime = (double)(end.QuadPart - start.QuadPart) / freq.QuadPart;
         asm_time_sum += asmTime;
-        printf("Assembly run %d time: %.12lf seconds\n", j + 1, asmTime);
+        printf("Assembly run %d time: %.12lf seconds  \n", j + 1, asmTime);
     }
     double avgAsmTime = asm_time_sum / 30.0;
-    printf("Average Assembly time: %.12lf seconds\n\n", avgAsmTime);
+    printf("Average Assembly time: %.12lf seconds  \n\n", avgAsmTime);
 
     double c_time_sum = 0.0;
     for (j = 0; j < 30; j++) {
@@ -64,16 +64,16 @@ int main() {
 
         double cTime = (double)(end.QuadPart - start.QuadPart) / freq.QuadPart;
         c_time_sum += cTime;
-        printf("C run %d time: %.12lf seconds\n", j + 1, cTime);
+        printf("C run %d time: %.12lf seconds  \n", j + 1, cTime);
     }
     double avgCTime = c_time_sum / 30.0;
-    printf("Average C time: %.12lf seconds\n\n", avgCTime);
+    printf("Average C time: %.12lf seconds  \n\n", avgCTime);
 
-    printf("ASM results (m/s^2):\n");
-    for (i = 0; i < rows; i++) printf("%d\n", ansMatrixASM[i]);
+    printf("ASM results (m/s^2): ");
+    for (i = 0; i < rows; i++) printf("%d ", ansMatrixASM[i]);
 
-    printf("\nC results (m/s^2):\n");
-    for (i = 0; i < rows; i++) printf("%d\n", ansMatrixC[i]);
+    printf("\nC results (m/s^2): ");
+    for (i = 0; i < rows; i++) printf("%d ", ansMatrixC[i]);
 
     if (avgAsmTime < avgCTime)
         printf("\nAssembly is faster on average: %.12lf < %.12lf\n", avgAsmTime, avgCTime);
