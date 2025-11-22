@@ -24,7 +24,7 @@ int main() {
     }
 
     for (i = 0; i < rows; i++) {
-        if (scanf_s("%f %f %f", &inputMatrix[i][0], &inputMatrix[i][1], &inputMatrix[i][2]) != 3) {
+        if (scanf_s("%f ,%f ,%f", &inputMatrix[i][0], &inputMatrix[i][1], &inputMatrix[i][2]) != 3) {
             fprintf(stderr, "Failed to read row %d\n", i);
             free(inputMatrix);
             return 1;
