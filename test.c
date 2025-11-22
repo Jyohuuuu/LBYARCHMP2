@@ -6,7 +6,8 @@
 extern void asmMain(int rows, float (*matrix)[3], int (*matrix2));
 
 void c_equivalent(int rows, float (*matrix)[3], int (*matrix2)) {
-    for (int i = 0; i < rows; i++) {
+	int i;
+    for (i = 0; i < rows; i++) {
         float v_i = matrix[i][0];
         float v_f = matrix[i][1];
         float t = matrix[i][2];
@@ -16,7 +17,7 @@ void c_equivalent(int rows, float (*matrix)[3], int (*matrix2)) {
 }
 
 int main() {
-    int rows = 0, i;
+    int rows = 0, i,j;
     double asm_time, c_time;
     if (scanf_s("%d", &rows) != 1) {
         fprintf(stderr, "Failed to read number of rows\n");
@@ -45,7 +46,7 @@ int main() {
     // assembly equivalent with timing
     LARGE_INTEGER freq, start, end;
     double time_sum = 0;
-    for (int j = 0; j < 30; j++) {
+    for (j = 0; j < 30; j++) {
         QueryPerformanceFrequency(&freq);
         QueryPerformanceCounter(&start);
         asmMain(rows, inputMatrix, ansMatrix);
@@ -69,7 +70,7 @@ int main() {
 
     // for c equivalent
      time_sum = 0;
-    for (int j = 0; j < 30; j++) {
+    for (j = 0; j < 30; j++) {
         QueryPerformanceFrequency(&freq);
         QueryPerformanceCounter(&start);
         c_equivalent(rows, inputMatrix, ansMatrix);
@@ -83,7 +84,7 @@ int main() {
     c_time = (double)time_sum / 30;
     printf("Average C time over 30 runs: %.12lf seconds\n", c_time);
     
-    for (int j = 0; j < rows; j++) {
+    for (j = 0; j < rows; j++) {
         printf("C equivalent %d: %d\n", j, ansMatrix[j]);
     }
     printf("Integer acceleration values (m/s^2)\n");
