@@ -84,7 +84,7 @@ runTest10000.bat
 ```
 
 ## results
-We can see based on the tests that the assembly function was clearly faster than the c equivalent function in computing the acceleration, which becomes more apparent the more inputs there are. Assembly on average takes less time to complete based on these tests
+We can see based on the tests that the assembly function was clearly faster than the c equivalent function in computing the acceleration, which becomes more apparent the more inputs there are, though the difference was noticable already with as little as 10 inputs. Assembly on average takes less time to complete based on these tests. The C equivalent function was easier to code, but the trade off was that it took longer to execute, while assembly was harder to code, but it executes faster. An instance of the tests for each Y input is shown below to demonstrate the average time for C and assembly function.
 ### Y = 10
 Assembly run 1 time: 0.000000100000 seconds  
 Assembly run 2 time: 0.000000400000 seconds  
