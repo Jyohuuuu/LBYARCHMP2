@@ -1,6 +1,6 @@
 # LBYARCHMP2 - program output, correctness check, tests
 Made by:  
-Julian Briones  
+Julian Johan Briones  
 Sidney Chan
 # How to Compile and Run
 
